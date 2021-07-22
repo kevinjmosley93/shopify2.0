@@ -139,6 +139,10 @@ table {
 .header1 a:hover {
   cursor: pointer;
 }
+.header1__collections-nav {
+  margin-bottom: 0;
+  padding-left: 0;
+}
 .header1__collections-nav a {
   padding-right: 20px;
   display: 'inline-block';
@@ -198,6 +202,10 @@ table {
 .header2 a:hover {
   cursor: pointer;
 }
+.header2__collections-nav {
+  margin-bottom: 0;
+  padding-left: 0;
+}
 .header2__collections-nav a {
   padding-right: 20px;
   display: 'inline-block';
@@ -256,6 +264,10 @@ table {
 }
 .header3 a:hover {
   cursor: pointer;
+}
+.header3__collections-nav {
+  margin-bottom: 0;
+  padding-left: 0;
 }
 .header3__collections-nav a {
   padding-right: 20px;
