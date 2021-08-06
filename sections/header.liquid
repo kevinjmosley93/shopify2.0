@@ -1,21 +1,156 @@
+{%case section.settings.header_type%}
+
+{%when 'header1'%}
 <header class="header header1">
   <ul class="header1__collections-nav d-lg-block d-none">
-    <li class="header1__collection-link"><a href="/link">Link <i class="fas fa-chevron-down"></i></a>
+    {%- if section.settings.menu != blank -%}
+    {%- for link in section.settings.menu.links -%}
+    {%- if link.links == blank -%}
+    <li class="header1__collection-link">
+      <a href="{{link.url}}">{{link.title | escape }}</a>
+    </li>
+    {%else%}
+    <li class="header1__collection-link">
+      <a href="{{link.url}}">{{link.title | escape }}
+        <i class="fas fa-chevron-down"></i>
+      </a>
       <ul class="collection-link__sub-links">
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
+        {%for childlink in link.links%}
+        <li>
+          <a href="{{childlink.url}}">{{childlink.title | escape}}</a>
+        </li>
+        {%endfor%}
       </ul>
     </li>
-    <li class="header1__collection-link"><a href="/link">Link</a></li>
-    <li class="header1__collection-link"><a href="/link">Link</a></li>
+    {%endif%}
+    {%endfor%}
+    {%endif%}
   </ul>
   <div class="d-lg-none text-light"><i class="fas fa-bars"></i></div>
-  <div class="header1__logo"><a>Company</a></div>
-  <div class="header1__collections-nav"><a><i class="fas fa-user"></i></a><a><i class="fas fa-shopping-cart"></i></a>
+  <div class="header1__logo">
+    <a href="{{ routes.root_url }}">
+      {%- if section.settings.logo != blank -%}
+      {%- assign image_size = section.settings.logo_width | append: 'x' -%}
+      <img
+        srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+        src="{{ section.settings.logo | img_url: image_size }}" loading="lazy" class="header__heading-logo"
+        alt="{{ section.settings.logo.alt | default: shop.name | escape }}">
+      {%- else -%}
+      {{ shop.name }}
+      {%- endif -%}</a>
+  </div>
+  <div class="header1__collections-nav">
+    {%- if shop.customer_accounts_enabled -%}
+    <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}">
+      <i class="fas fa-user"></i>
+    </a>
+    {%- endif -%}
+    <a href="{{ routes.cart_url }}">
+      <i class="fas fa-shopping-cart"></i>
+    </a>
   </div>
 </header>
+
+{%when 'header2'%}
+
+<header class="header header2">
+  <div class="header2__logo"><a href="{{ routes.root_url }}">
+      {%- if section.settings.logo != blank -%}
+      {%- assign image_size = section.settings.logo_width | append: 'x' -%}
+      <img
+        srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+        src="{{ section.settings.logo | img_url: image_size }}" loading="lazy" class="header__heading-logo"
+        alt="{{ section.settings.logo.alt | default: shop.name | escape }}">
+      {%- else -%}
+      {{ shop.name }}
+      {%- endif -%}</a></div>
+  <ul class="header2__collections-nav">
+    {%- if section.settings.menu != blank -%}
+    {%- for link in section.settings.menu.links -%}
+    {%- if link.links != blank -%}
+    <li class="header2__collection-link"><a href="{{link.url}}">{{link.title | escape }} <i
+          class="fas fa-chevron-down"></i></a>
+      <ul class="collection-link__sub-links">
+        {%for childlink in link.links%}
+        <li>
+          <a href="{{childlink.url}}">{{childlink.title | escape}}</a>
+        </li>
+        {%endfor%}
+      </ul>
+    </li>
+    {%else%}
+    <li class="header2__collection-link">
+      <a href="{{link.url}}">{{link.title | escape }}</a>
+    </li>
+    {%endif%}
+    {%endfor%}
+    {%endif%}
+  </ul>
+  <div class="header2__collections-nav">
+    {%- if shop.customer_accounts_enabled -%}
+    <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}">
+      <i class="fas fa-user"></i>
+    </a>
+    {%- endif -%}
+    <a href="{{ routes.cart_url }}">
+      <i class="fas fa-shopping-cart"></i>
+    </a>
+  </div>
+</header>
+
+
+{%when 'header3'%}
+
+<header class="header header3">
+  <div class="header3__logo"><a href="{{ routes.root_url }}">
+      {%- if section.settings.logo != blank -%}
+      {%- assign image_size = section.settings.logo_width | append: 'x' -%}
+      <img
+        srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+        src="{{ section.settings.logo | img_url: image_size }}" loading="lazy" class="header__heading-logo"
+        alt="{{ section.settings.logo.alt | default: shop.name | escape }}">
+      {%- else -%}
+      {{ shop.name }}
+      {%- endif -%}</a></div>
+  <div class="header3__collections-nav">
+    <ul class="header3__collections-nav">
+
+      {%- if section.settings.menu != blank -%}
+      {%- for link in section.settings.menu.links -%}
+      {%- if link.links != blank -%}
+
+
+      <li class="header3__collection-link"><a href="{{link.url}}">{{link.title | escape }} <i
+            class="fas fa-chevron-down"></i></a>
+        <ul class="collection-link__sub-links">
+          {%for childlink in link.links%}
+          <li>
+            <a href="{{childlink.url}}">{{childlink.title | escape}}</a>
+          </li>
+          {%endfor%}
+        </ul>
+      </li>
+      {%else%}
+      <li class="header3__collection-link">
+        <a href="{{link.url}}">{{link.title | escape }}</a>
+      </li>
+      {%endif%}
+      {%endfor%}
+      {%endif%}
+      {%- if shop.customer_accounts_enabled -%}
+      <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}">
+        <i class="fas fa-user"></i>
+      </a>
+      {%- endif -%}
+      <a href="{{ routes.cart_url }}">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+    </ul>
+  </div>
+</header>
+
+
+{%endcase%}
 
 {% schema %}
 {
@@ -27,6 +162,26 @@
 "label": "t:sections.header.settings.logo.label"
 },
 {
+"type": "select",
+"id": "header_type",
+"label": "Type of Header",
+"options": [
+{
+"value": "header1",
+"label": "Header 1"
+},
+{
+"value": "header2",
+"label": "Header 2"
+},
+{
+"value": "header3",
+"label": "Header 3"
+}
+],
+"default": "header1"
+},
+{
 "type": "range",
 "id": "logo_width",
 "min": 50,
@@ -35,26 +190,6 @@
 "unit": "t:sections.header.settings.logo_width.unit",
 "label": "t:sections.header.settings.logo_width.label",
 "default": 100
-},
-{
-"type": "select",
-"id": "logo_position",
-"label": "t:sections.header.settings.logo_position.label",
-"options": [
-{
-"value": "middle-left",
-"label": "t:sections.header.settings.logo_position.options__1.label"
-},
-{
-"value": "top-left",
-"label": "t:sections.header.settings.logo_position.options__2.label"
-},
-{
-"value": "top-center",
-"label": "t:sections.header.settings.logo_position.options__3.label"
-}
-],
-"default": "middle-left"
 },
 {
 "type": "link_list",

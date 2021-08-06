@@ -533,9 +533,9 @@ table:not([class]) th {
   opacity: 0.7;
 }
 
-*:empty {
+/* *:empty {
   display: none;
-}
+} */
 
 br:empty,
 hr:empty,
