@@ -20,7 +20,8 @@
     <div class="hero2__content-container"
       style="background-color: {{ section.settings.background1 | color_modify: 'alpha', opacity1  }}">
       {%- if section.settings.button_label1 != blank -%}
-      <a href="{{ section.settings.button_link1 }}" class="hero2__btn" {{ section.shopify_attributes }}>
+      <a href="{{ section.settings.button_link1 }}" style="background-color: {{ section.settings.button_color1 }}"
+        class="hero2__btn" {{ section.shopify_attributes }}>
         {{ section.settings.button_label1 | escape }}
       </a>
       {%- endif -%}
@@ -47,7 +48,8 @@
       style="background-color: {{ section.settings.background2 | color_modify: 'alpha', opacity2  }}">
       <div class="hero2__info">
         {%- if section.settings.button_label2 != blank -%}
-        <a href="{{ section.settings.button_link2 }}" class="hero2__btn" {{ section.shopify_attributes }}>
+        <a href="{{ section.settings.button_link2 }}" style="background-color: {{ section.settings.button_color2 }}"
+          class="hero2__btn" {{ section.shopify_attributes }}>
           {{ section.settings.button_label2 | escape }}
         </a>
         {%- endif -%}
@@ -97,8 +99,7 @@
 {
 "type": "color",
 "id": "background1",
-"label": "Background",
-"default": "#000000"
+"label": "Background"
 },
 {
 "type": "range",
@@ -117,6 +118,12 @@
 "info": "t:sections.image-with-text.blocks.button.settings.button_label.info"
 },
 {
+"type": "color",
+"id": "button_color1",
+"label": "Button Color 1",
+"default": "#000000"
+},
+{
 "type": "url",
 "id": "button_link1",
 "label": "Link"
@@ -129,8 +136,7 @@
 {
 "type": "color",
 "id": "background2",
-"label": "Background",
-"default": "#000000"
+"label": "Background"
 },
 {
 "type": "range",
@@ -147,6 +153,12 @@
 "default": "Button label",
 "label": "t:sections.image-with-text.blocks.button.settings.button_label.label",
 "info": "t:sections.image-with-text.blocks.button.settings.button_label.info"
+},
+{
+"type": "color",
+"id": "button_color2",
+"label": "Button Color 2",
+"default": "#000000"
 },
 {
 "type": "url",
