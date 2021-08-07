@@ -31,7 +31,7 @@
         "1628318924a78e6983-2"
       ],
       "settings": {
-        "hero_height": "100vh",
+        "hero_height": "75vh",
         "image": "shopify:\/\/shop_images\/the-sun-sets-through-a-thick-evening-fog.jpg",
         "background": "#000000",
         "opacity": 50,
@@ -41,7 +41,7 @@
     "1628319004ce465b73": {
       "type": "hero-two",
       "settings": {
-        "hero_height": "75vh",
+        "hero_height": "50vh",
         "image1": "shopify:\/\/shop_images\/stylish-man-in-bow-tie.jpg",
         "background1": "#000000",
         "opacity1": 50,
