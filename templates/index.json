@@ -79,7 +79,7 @@
       "settings": {
         "collection": "men",
         "total_products": 8,
-        "container_shape": "circle",
+        "container_shape": "square",
         "image_fit": "contain",
         "background": "#EDEFF5",
         "opacity": 100,
