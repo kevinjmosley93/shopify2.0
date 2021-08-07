@@ -38,6 +38,24 @@
         "info_alignment": "center"
       }
     },
+    "162837050389ddb67b": {
+      "type": "collection-products-1",
+      "settings": {
+        "collection": "nike",
+        "total_products": 3,
+        "container_shape": "circle",
+        "image_fit": "contain",
+        "background": "#EDEFF5",
+        "opacity": 100,
+        "show_title": true,
+        "show_price": true,
+        "xxl_col": "col-xxl-4",
+        "xl_col": "col-xl-4",
+        "lg_col": "col-lg-4",
+        "md_col": "col-md-4",
+        "sm_col": "col-sm-6"
+      }
+    },
     "1628319004ce465b73": {
       "type": "hero-two",
       "settings": {
@@ -77,6 +95,7 @@
   },
   "order": [
     "1628318924a78e6983",
+    "162837050389ddb67b",
     "1628319004ce465b73",
     "1628370324a5ceef75"
   ]
