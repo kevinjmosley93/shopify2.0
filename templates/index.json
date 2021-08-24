@@ -7,7 +7,7 @@
           "type": "heading",
           "settings": {
             "title": "Title",
-            "title_color": "#fff",
+            "title_color": "#ffffff",
             "title_size": "md"
           }
         },
@@ -38,22 +38,44 @@
         "info_alignment": "center"
       }
     },
-    "162837050389ddb67b": {
-      "type": "collection-products-1",
+    "1629779641dc45dce6": {
+      "type": "collection-group",
+      "blocks": {
+        "1629779641dc45dce6-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sale"
+          }
+        },
+        "1629779641dc45dce6-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "men"
+          }
+        },
+        "1629779641dc45dce6-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "nike"
+          }
+        }
+      },
+      "block_order": [
+        "1629779641dc45dce6-0",
+        "1629779641dc45dce6-1",
+        "1629779641dc45dce6-2"
+      ],
       "settings": {
-        "collection": "nike",
-        "total_products": 3,
         "container_shape": "circle",
         "image_fit": "contain",
         "background": "#ffffff",
         "opacity": 100,
         "show_title": true,
-        "show_price": true,
         "xxl_col": "col-xxl-4",
         "xl_col": "col-xl-4",
         "lg_col": "col-lg-4",
         "md_col": "col-md-4",
-        "sm_col": "col-sm-6"
+        "sm_col": "col-sm-2"
       }
     },
     "1628319004ce465b73": {
@@ -95,7 +117,7 @@
   },
   "order": [
     "1628318924a78e6983",
-    "162837050389ddb67b",
+    "1629779641dc45dce6",
     "1628319004ce465b73",
     "1628370324a5ceef75"
   ]
