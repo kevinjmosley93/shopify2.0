@@ -28,23 +28,20 @@
             {%- endif -%}
           </div>
           <div class="collection1__product-info">
-            <div class="collection1__product-details">
-              {%- if section.settings.show_title == true -%}
-              <span class="collection1__product-title">
-                {{ product.title }}
-              </span>
-              {%- endif -%}
-              {%- if section.settings.show_price == true -%}
-              <span class="collection1__product-price">
-                {{ product.price | money }}
-              </span>
-              {%- endif -%}
-            </div>
-
-            <div class="collection1__colors">
-              <div class="collection1__color collection1__color--blue"></div>
-              <div class="collection1__color collection1__color--black"></div>
-            </div>
+            <a style="color: {{ settings.colors_text }}" href="{{product.url}}">
+              <div class="collection1__product-details">
+                {%- if section.settings.show_title == true -%}
+                <span class="collection1__product-title">
+                  {{ product.title }}
+                </span>
+                {%- endif -%}
+                {%- if section.settings.show_price == true -%}
+                <span class="collection1__product-price">
+                  {{ product.price | money }}
+                </span>
+                {%- endif -%}
+              </div>
+            </a>
           </div>
         </div>
       </div>

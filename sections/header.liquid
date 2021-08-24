@@ -26,7 +26,7 @@
     {%endfor%}
     {%endif%}
   </ul>
-  <div class="d-lg-none text-light"><i class="fas fa-bars"></i></div>
+  <div class="d-lg-none text-light"><i id='bars' class="fas fa-bars"></i></div>
   <div class="header1__logo">
     <a href="{{ routes.root_url }}">
       {%- if section.settings.logo != blank -%}
@@ -36,8 +36,9 @@
         src="{{ section.settings.logo | img_url: image_size }}" loading="lazy" class="header__heading-logo"
         alt="{{ section.settings.logo.alt | default: shop.name | escape }}">
       {%- else -%}
-      {{ shop.name }}
-      {%- endif -%}</a>
+      <span style="color:white; font-size: {{ section.settings.text_font_size }}">{{ shop.name }}</span>
+      {%- endif -%}
+    </a>
   </div>
   <div class="header1__collections-nav">
     {%- if shop.customer_accounts_enabled -%}
@@ -62,7 +63,7 @@
         src="{{ section.settings.logo | img_url: image_size }}" loading="lazy" class="header__heading-logo"
         alt="{{ section.settings.logo.alt | default: shop.name | escape }}">
       {%- else -%}
-      {{ shop.name }}
+      <span style="color:white; font-size: {{ section.settings.text_font_size }}">{{ shop.name }}</span>
       {%- endif -%}</a></div>
   <ul class="header2__collections-nav">
     {%- if section.settings.menu != blank -%}
@@ -110,7 +111,7 @@
         src="{{ section.settings.logo | img_url: image_size }}" loading="lazy" class="header__heading-logo"
         alt="{{ section.settings.logo.alt | default: shop.name | escape }}">
       {%- else -%}
-      {{ shop.name }}
+      <span style="color:white; font-size: {{ section.settings.text_font_size }}">{{ shop.name }}</span>
       {%- endif -%}</a></div>
   <div class="header3__collections-nav">
     <ul class="header3__collections-nav">
@@ -152,6 +153,14 @@
 
 {%endcase%}
 
+<script>
+  const bars = document.getElementById('bars')
+  bars.addEventListener('click', () => {
+    console.log('clicked the bars')
+  })
+  // console.log(bars)
+</script>
+
 {% schema %}
 {
 "name": "t:sections.header.name",
@@ -160,6 +169,12 @@
 "type": "image_picker",
 "id": "logo",
 "label": "t:sections.header.settings.logo.label"
+},
+{
+"type": "text",
+"id": "text_font_size",
+"label": "Font Size",
+"default": "24px"
 },
 {
 "type": "select",

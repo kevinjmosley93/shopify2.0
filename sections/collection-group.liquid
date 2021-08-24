@@ -38,7 +38,7 @@
               {%- endif -%}
               {%- if section.settings.show_price == true -%}
               <span class="collection1__product-price">
-                ${{ product.price }}
+                {{ product.price | money }}
               </span>
               {%- endif -%}
             </div>
