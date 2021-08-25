@@ -738,6 +738,11 @@ h1 {
 }
 .footer__logo {
   color: #fff;
+  width: 100%;
+}
+.footer__logo img {
+  -webkit-object-fit: contain;
+  object-fit: contain;
 }
 .footer__links {
   display: flex;
@@ -763,6 +768,10 @@ h1 {
   margin-bottom: 1rem;
   border-radius: 4px;
 }
+.footer input:focus {
+  border: none;
+  outline: none;
+}
 .footer p {
   font-size: 0.7rem;
   line-height: 1.7;
@@ -775,12 +784,12 @@ h1 {
 }
 .footer__social-link {
   display: block;
-  padding: 12px;
+  padding: 12px 0;
   color: #7e7e7e;
 }
 .footer__bottom {
   border-top: 1px solid #7e7e7e;
-  padding: 20px 0 0;
+  padding: 20px 0;
   display: flex;
   justify-content: space-between;
 }

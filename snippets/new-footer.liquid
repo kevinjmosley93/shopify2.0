@@ -1,38 +1,88 @@
 <footer class="footer">
   <div class="container">
     <div class="row">
-      <div class="col-md-1 mb-md-0 mb-4">
-        <div class="footer__logo">logo</div>
+      <div class="col-md-3 mb-md-0 mb-4">
+        <div class="footer__logo">
+          {%- if section.settings.logo != blank -%}
+          <img
+            style="width: {{ section.settings.logo_width  }}; height: {{  section.settings.logo_height }}; object-fit: {{ section.settings.logo_fit }};"
+            srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+            src="{{ section.settings.logo | img_url: image_size }}" loading="lazy"
+            alt="{{ section.settings.logo.alt | default: shop.name | escape }}">
+          {%- else -%}
+          <span style="color:white; font-size: {{ section.settings.text_font_size }}">{{ shop.name }}</span>
+          {%- endif -%}
+        </div>
       </div>
-      <div class="col-md-7">
+      <div class="col-md-5">
         <div class="row">
-          <div class="col-md-4 col-6">
+          <div class="col-6">
             <div class="footer__links"><span class="footer__column-title">Get Help</span><a
                 class="footer__link">Link</a><a class="footer__link">Link</a><a class="footer__link">Link</a></div>
           </div>
-          <div class="col-md-4 col-6">
-            <div class="footer__links"><span class="footer__column-title">Get Help</span><a
-                class="footer__link">Link</a><a class="footer__link">Link</a><a class="footer__link">Link</a></div>
-          </div>
-          <div class="col-md-4 col-sm-12 d-md-block d-none">
+          <div class="col-6">
             <div class="footer__links"><span class="footer__column-title">Get Help</span><a
                 class="footer__link">Link</a><a class="footer__link">Link</a><a class="footer__link">Link</a></div>
           </div>
         </div>
       </div>
       <div class="col-md-4">
-        <div class="footer__extra"><span class="footer__column-title">Sign Up for Email Newsletter</span>
-          <div></div><input type="text" placeholder="email@company.com" class="footer__input" name="email_newsletter"><a
-            class="btn btn-sm btn-primary">Send</a>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem vitae mauris viverra luctus.
+        <div class="footer__extra">
+          {%- if section.settings.newsletter_enable -%}
+          {%- if section.settings.newsletter_heading != blank -%}
+          <h2 class="footer__column-title">{{ section.settings.newsletter_heading | escape }}</h2>
+          {%- endif -%}
+          {%- form 'customer' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <input style="width: 100%;" id="NewsletterForm--{{ section.id }}" type="email" name="contact[email]"
+            class="footer__input" value="{{ form.email }}" aria-required="true" autocorrect="off" autocapitalize="off"
+            autocomplete="email" {% if form.errors %} autofocus aria-invalid="true"
+            aria-describedby="ContactFooter-error" {% elsif form.posted_successfully? %}
+            aria-describedby="ContactFooter-success" {% endif %} placeholder="{{ 'newsletter.label' | t }}">
+          <label class="field__label" for="NewsletterForm--{{ section.id }}">
+            {{ 'newsletter.label' | t }}
+          </label>
+          {%- if form.errors -%}
+          <small class="newsletter-form__message form__message" id="ContactFooter-error">{% render 'icon-error' %}{{
+            form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+          {%- endif -%}
+
+          <button style="width: 100%;" type="submit" class="btn btn-sm btn-primary mb-2" name="commit">
+            {{ 'newsletter.button_label' | t }}
+          </button>
+          {%- if form.posted_successfully? -%}
+          <h3 style="color: green; font-size: .9rem;">{{ 'newsletter.success' | t
+            }}</h3>
+          {%- endif -%}
+          {%- endform -%}
+
+          {%- endif -%}
+          <p class="text-justify text-wrap">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis quis sem vitae
+            mauris viverra luctus.
             Pellentesque sit amet sodales diam. Suspendisse varius urna risus, eget vulputate dui aliquam eget.</p>
-          <div class="footer__social-icons"><a class="footer__social-link"><i class="fab fa-facebook-f"></i></a><a
-              class="footer__social-link"><i class="fab fa-twitter"></i></a><a class="footer__social-link"><i
-                class="fab fa-instagram"></i></a><a class="footer__social-link"><i class="fab fa-youtube"></i></a></div>
+          {% if section.settings.show_social != false %}
+          <div class="footer__social-icons">
+            {%- if settings.social_facebook_link != blank -%}
+            <a href="{{ settings.social_facebook_link }}" class="footer__social-link"><i
+                class="fab fa-facebook-f"></i></a>
+            {%- endif -%}
+
+            {%- if settings.social_twitter_link != blank -%}
+            <a href="{{ settings.social_twitter_link }}" class="footer__social-link">
+              <i class="fab fa-twitter"></i></a>
+            {%- endif -%}
+            {%- if settings.social_youtube_link != blank -%}
+            <a href="{{ settings.social_youtube_link }}" class="footer__social-link"><i class="fab fa-youtube"></i></a>
+            {%- endif -%}
+            {%- if settings.social_tiktok_link != blank -%}
+            <a href="{{settings.social_tiktok_link }}" class="footer__social-link"><i class="fab fa-tiktok"></i></a>
+            {%- endif -%}
+          </div>
+          {% endif %}
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-12">
+      <div class="row p-0">
+        <div class="col-lg-12 p-0">
           <div class="footer__bottom">
             <div class="footer__copyright">© <span id='year'></span> Store</div>
             <a class="footer__extra-links">Link</a>

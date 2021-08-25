@@ -9,7 +9,7 @@
           <div
             class="collection1__product-img collection1__product-img--{{section.settings.container_shape}} collection1__product-img--{{section.settings.image_fit}}"
             style="background-color: {{ section.settings.background | color_modify: 'alpha', opacity  }}">
-            <div class="collection1__heart"><i class="far fa-heart"></i></div>
+            <div class="collection1__heart"><i class="fas fa-cart-plus"></i></div>
             {%- if product.images[0] != blank -%}
             <a href="{{product.url}}" class="img-link">
               <img srcset="{%- if product.images[0].width >= 165 -%}{{ product.images[0]  | img_url: '165x' }} 165w,{%- endif -%}
