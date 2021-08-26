@@ -120,7 +120,7 @@
         "collection": "women",
         "total_products": 4,
         "container_shape": "rectangle",
-        "image_fit": "cover",
+        "image_fit": "contain",
         "background": "#fff",
         "opacity": 100,
         "show_title": true,
