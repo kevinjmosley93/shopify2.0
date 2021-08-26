@@ -113,12 +113,31 @@
         "md_col": "col-md-3",
         "sm_col": "col-sm-6"
       }
+    },
+    "1629952683813d906e": {
+      "type": "collection-products-1",
+      "settings": {
+        "collection": "",
+        "total_products": 16,
+        "container_shape": "rectangle",
+        "image_fit": "cover",
+        "background": "#fff",
+        "opacity": 100,
+        "show_title": true,
+        "show_price": true,
+        "xxl_col": "col-xxl-3",
+        "xl_col": "col-xl-3",
+        "lg_col": "col-lg-3",
+        "md_col": "col-md-3",
+        "sm_col": "col-sm-6"
+      }
     }
   },
   "order": [
     "1628318924a78e6983",
     "1629779641dc45dce6",
     "1628319004ce465b73",
-    "1628370324a5ceef75"
+    "1628370324a5ceef75",
+    "1629952683813d906e"
   ]
 }
