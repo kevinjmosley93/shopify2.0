@@ -38,24 +38,6 @@
         "info_alignment": "center"
       }
     },
-    "1628370324a5ceef75": {
-      "type": "collection-products-1",
-      "settings": {
-        "collection": "men",
-        "total_products": 6,
-        "container_shape": "square",
-        "image_fit": "contain",
-        "background": "#FFFFFF",
-        "opacity": 100,
-        "show_title": true,
-        "show_price": true,
-        "xxl_col": "col-xxl-4",
-        "xl_col": "col-xl-4",
-        "lg_col": "col-lg-4",
-        "md_col": "col-md-4",
-        "sm_col": "col-sm-6"
-      }
-    },
     "1629779641dc45dce6": {
       "type": "collection-group",
       "blocks": {
@@ -96,6 +78,24 @@
         "sm_col": "col-sm-2"
       }
     },
+    "1628370324a5ceef75": {
+      "type": "collection-products-1",
+      "settings": {
+        "collection": "men",
+        "total_products": 6,
+        "container_shape": "square",
+        "image_fit": "contain",
+        "background": "#FFFFFF",
+        "opacity": 100,
+        "show_title": true,
+        "show_price": true,
+        "xxl_col": "col-xxl-4",
+        "xl_col": "col-xl-4",
+        "lg_col": "col-lg-4",
+        "md_col": "col-md-4",
+        "sm_col": "col-sm-6"
+      }
+    },
     "1628319004ce465b73": {
       "type": "hero-two",
       "settings": {
@@ -113,12 +113,31 @@
         "button_color2": "#000000",
         "button_link2": "shopify:\/\/collections\/women"
       }
+    },
+    "1629953337c3a1f582": {
+      "type": "collection-products-1",
+      "settings": {
+        "collection": "women",
+        "total_products": 4,
+        "container_shape": "rectangle",
+        "image_fit": "cover",
+        "background": "#fff",
+        "opacity": 100,
+        "show_title": true,
+        "show_price": true,
+        "xxl_col": "col-xxl-3",
+        "xl_col": "col-xl-3",
+        "lg_col": "col-lg-3",
+        "md_col": "col-md-6",
+        "sm_col": "col-sm-6"
+      }
     }
   },
   "order": [
     "1628318924a78e6983",
-    "1628370324a5ceef75",
     "1629779641dc45dce6",
-    "1628319004ce465b73"
+    "1628370324a5ceef75",
+    "1628319004ce465b73",
+    "1629953337c3a1f582"
   ]
 }
