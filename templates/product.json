@@ -80,29 +80,10 @@
         "add_image_padding": false,
         "show_vendor": false
       }
-    },
-    "16328037025e20c90e": {
-      "type": "collection-products-1",
-      "settings": {
-        "collection": "men",
-        "total_products": 8,
-        "container_shape": "square",
-        "image_fit": "contain",
-        "background": "#FAF1E9",
-        "opacity": 100,
-        "show_title": true,
-        "show_price": true,
-        "xxl_col": "col-xxl-6",
-        "xl_col": "col-xl-6",
-        "lg_col": "col-lg-6",
-        "md_col": "col-md-6",
-        "sm_col": "col-sm-6"
-      }
     }
   },
   "order": [
     "main",
-    "product-recommendations",
-    "16328037025e20c90e"
+    "product-recommendations"
   ]
 }
